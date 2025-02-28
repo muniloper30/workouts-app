@@ -1,12 +1,13 @@
-window.onload = () => {
-    document.body.style.opacity = "1"; // Hacer que el body aparezca con transición
-    window.alert(`¡Bienvenido a Workouts Fit!
+window.onload = () => { //Implementación de sessionStorage para mostrar alerta de bienvenida solo una vez
+    document.body.style.opacity = 1;
+    if (!sessionStorage.getItem("alertShown")) {
+        alert(`¡Bienvenido a Workouts Fit!
     Para ver los workouts disponibles, haz clic en el botón "Mostrar Workouts".
     La web se encuentra en construcción, por lo que es posible que no todos los workouts estén disponibles.
     ¡Gracias por tu paciencia!`);
+        sessionStorage.setItem("alertShown", "true");
+    }
 };
-
-
 
 
 // URL de la API
